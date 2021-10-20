@@ -10,7 +10,7 @@ const server = http.createServer((req, res) => {
 
     switch(true){
         case req.url === "/" && req.method === "GET":
-            fs.readFile('./views/index.html', (err, data) => {
+            fs.readFile('./views/card.html', (err, data) => {
                 res.setHeader('content-type', 'text/html');
                 res.writeHead(200);
                 res.end(data);
