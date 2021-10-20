@@ -24,11 +24,25 @@ const server = http.createServer((req, res) => {
                     res.end(data);
                 });
                 break;
+            case req.url === "/ferficipo.png" && req.method === "GET":
+                fs.readFile('./images/ferficipo.png', (err, data) =>{
+                    res.setHeader('content-type', 'image/png');
+                    res.writeHead(200);
+                    res.end(data);
+                });
+                break;
+                case req.url === "/noicipo.png" && req.method === "GET":
+                fs.readFile('./images/noicipo.png', (err, data) =>{
+                    res.setHeader('content-type', 'image/png');
+                    res.writeHead(200);
+                    res.end(data);
+                });
+                break;
 
         default:
             res.setHeader('content-Type', 'text/html');
             res.writeHead(404);
-            res.end('<h1>HIBA<h1><a href="/">VISSZA a fooldalra</a>');
+            res.end('<h1>HIBA<h1><a href="/">Vissza a fooldalra</a>');
             break;         
     }
 });
